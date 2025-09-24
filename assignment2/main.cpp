@@ -14,7 +14,7 @@
 #include <string>
 #include <unordered_set>
 
-std::string kYourName = "STUDENT TODO"; // Don't forget to change this!
+std::string kYourName = "Bergling Murphy"; // Don't forget to change this!
 
 /**
  * Takes in a file name and returns a set containing all of the applicant names as a set.
@@ -29,8 +29,48 @@ std::string kYourName = "STUDENT TODO"; // Don't forget to change this!
  */
 std::set<std::string> get_applicants(std::string filename) {
   // STUDENT TODO: Implement this function.
+  std::set<std::string> student_name;
+
+  std::ifstream ifs(filename);
+  if(ifs.is_open()) {
+    std::cout << "student's name file is ok" << std::endl;
+  } else {
+    std::cout << "student's name file is shit" << std::endl;
+  }
+
+  std::string buf;
+  while(std::getline(ifs, buf)) {
+    student_name.insert(buf);
+  }
+
+  ifs.close();
+
+  // test if set works
+  // std::cout << "1. set's size: " << student_name.size() << std::endl;
+  // std::cout << "2. set's content: ";
+  
+  // int count = 5;
+  // for(auto u : student_name) {
+  //   std::cout << u << ";";
+  //   count --;
+
+  //   if(count == 0) break;
+  // }
+
+  return student_name;
 }
 
+std::pair<char, char> get_initals(std::string name) {
+  char ch1 = name[0];
+
+  int p = 1;
+  while(name[p] != ' ') p ++;
+  
+  char ch2 = name[p + 1];
+
+  return std::pair<char, char>(ch1, ch2);
+}
+ 
 /**
  * Takes in a set of student names by reference and returns a queue of names
  * that match the given student name.
@@ -41,6 +81,34 @@ std::set<std::string> get_applicants(std::string filename) {
  */
 std::queue<const std::string*> find_matches(std::string name, std::set<std::string>& students) {
   // STUDENT TODO: Implement this function.
+
+  // test get_initials works
+  // std::pair<char, char> my_name = get_initals(name);
+  // std::cout << "my: " << my_name.first << "/" << my_name.second << std::endl;
+
+  std::queue<const std::string*> matches;
+
+  std::pair<char, char> my_initials = get_initals(name);
+  std::cout << "my: " << my_initials.first << "/" << my_initials.second << std::endl;
+
+  for(auto &u : students) {
+    // std::cout << "here! name: " << u << std::endl;
+    std::pair<char, char> love_initalis = get_initals(u);
+    // std::cout << "love: " << love_initalis.first << "/" << love_initalis.second << std::endl;
+
+    if(my_initials.first == love_initalis.first && my_initials.second == love_initalis.second) {
+      std::cout << "match! name: " << u << std::endl;
+      matches.push(&u);
+    }
+  }
+
+  if(matches.empty()) {
+    std::cout << "no love" << std::endl;
+  } else {
+    std::cout << "match 1: " << *matches.front() << std::endl;
+  }
+
+  return matches;
 }
 
 /**
@@ -55,6 +123,25 @@ std::queue<const std::string*> find_matches(std::string name, std::set<std::stri
  */
 std::string get_match(std::queue<const std::string*>& matches) {
   // STUDENT TODO: Implement this function.
+
+  int choose_index = 114514 % matches.size();
+  std::cout << "choose_index: " << choose_index << std::endl;
+  
+  std::string choose_one;
+  int now_index = 0;
+  while(now_index != choose_index) {
+    matches.pop();
+    now_index ++;
+  }
+  if(matches.empty()) {
+    std::cout << "matches is null!" << std::endl;
+  } else {
+    choose_one = *matches.back();
+  }
+
+  std::cout << "choose one: " << choose_one << std::endl;
+
+  return choose_one;
 }
 
 /* #### Please don't remove this line! #### */
