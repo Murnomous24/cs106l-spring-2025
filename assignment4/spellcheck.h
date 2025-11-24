@@ -13,7 +13,7 @@ struct Token {
   Token(std::string& source, It begin, It end)
       : src_offset{static_cast<std::size_t>(std::distance(source.begin(), begin))},
         content{std::string(begin, end)} {
-    clean(source);
+    clean(source); // TODO: do what ?
   }
 
 private:
