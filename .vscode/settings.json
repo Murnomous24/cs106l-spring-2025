@@ -91,6 +91,13 @@
     "xtr1common": "cpp",
     "xtree": "cpp",
     "xutility": "cpp",
-    "map": "cpp"
-  }
+    "map": "cpp",
+    "memory_resource": "cpp",
+    "numbers": "cpp",
+    "text_encoding": "cpp"
+  },
+  "cmake.sourceDirectory": "D:/cs106l-assignments/cs106l-lecture-code/lecture15",
+  "cmake.configureArgs": [
+        "-DENABLE_MOVE_SEMANTICS=1"
+  ]
 }
