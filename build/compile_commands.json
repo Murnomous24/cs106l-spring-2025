@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/cs106l-assignments/build",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -DENABLE_MOVE_SEMANTICS  -g -std=gnu++20 -o CMakeFiles\\main.dir\\main.cpp.obj -c D:\\cs106l-assignments\\cs106l-lecture-code\\lecture15\\main.cpp",
+  "file": "D:/cs106l-assignments/cs106l-lecture-code/lecture15/main.cpp",
+  "output": "CMakeFiles/main.dir/main.cpp.obj"
+}
+]

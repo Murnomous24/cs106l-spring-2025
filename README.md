@@ -17,3 +17,8 @@
   - 作业 6 包含了 `std::optional` 中类型安全的检查
 - [x] Assigment 7
   - 作业 7 包含对 `std::unique_ptr` 智能指针的简单实现，简单地介绍了智能指针如何安全、自动地完成动态内存管理。
+- [x] HashMap ([CS106L 2023 STL HashMap](https://web.stanford.edu/class/archive/cs/cs106l/cs106l.1226/assignment3.html))
+  - HashMap 作业进一步实践了 **模板编程**
+  - 通过设置一份基础的 HashMap 原始代码（包含 `.h` 和 `.cpp`）文件，以 `.h` 中的注释代码指导学生完成 **初始化（构造、析构）、运算符重载、拷贝（构造和赋值）、移动（构造和赋值）**
+  - 并通过预设的 benchmark 比较 from scratch 和 STL 库内的 HashMap 的性能，分析 from scratch 版本的特性
+- 
