@@ -1,14 +1,10 @@
 
 cmake_minimum_required(VERSION 3.14)
-project(hashmap)
+project(gap_buffer)
 
-
-set(CMAKE_CXX_STANDARD 17)
+# GoogleTest requires at least C++14
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-SET(CMAKE_BUILD_TYPE "Debug")
-
-SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
-SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -Wall")
 
 include(FetchContent)
 FetchContent_Declare(
@@ -22,23 +18,13 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(
-  hashmap_test
-  hashmap_test.cpp
+  gap_buffer_test
+  gap_buffer_test.cc
 )
 target_link_libraries(
-  hashmap_test
-  GTest::gtest_main
-)
-
-add_executable(
-    hashmap_perf
-    hashmap_perf.cpp
-)
-
-target_link_libraries(
-  hashmap_perf
+  gap_buffer_test
   GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(hashmap_test)
+gtest_discover_tests(gap_buffer_test)

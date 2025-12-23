@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\hashmap_test.dir/objects.a
-D:\msys64\mingw64\bin\ar.exe qc CMakeFiles\hashmap_test.dir/objects.a @CMakeFiles\hashmap_test.dir\objects1.rsp
-D:\msys64\mingw64\bin\g++.exe  -O0 -Wall -g2 -ggdb -Wl,--whole-archive CMakeFiles\hashmap_test.dir/objects.a -Wl,--no-whole-archive -o hashmap_test.exe -Wl,--out-implib,libhashmap_test.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\hashmap_test.dir\linkLibs.rsp

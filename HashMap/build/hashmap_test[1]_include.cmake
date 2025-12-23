@@ -1,5 +1,0 @@
-if(EXISTS "E:/Toy Discovery/CS106L-Self-Learning/assignments/HashMap/build/hashmap_test[1]_tests.cmake")
-  include("E:/Toy Discovery/CS106L-Self-Learning/assignments/HashMap/build/hashmap_test[1]_tests.cmake")
-else()
-  add_test(hashmap_test_NOT_BUILT hashmap_test_NOT_BUILT)
-endif()
