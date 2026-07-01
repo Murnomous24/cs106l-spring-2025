@@ -1,5 +1,5 @@
-# CS106L Assignments 
-
+# CS106L Spring 2025
+- 本 Repo 包含了 CS106L Spring 2025 的 Assignment 和 CS106L 课程往年较出名/有意义的数个 Lab
 - 克隆自 https://github.com/cs106l/cs106l-assignments/
 
 # Progress
